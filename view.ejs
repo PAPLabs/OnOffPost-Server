@@ -1,0 +1,53 @@
+<!DOCTYPE hmtl>
+<html lang="en">
+	<head>
+		<meta charset="utf-!">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="author" content="PAP">
+		<title>On-Off-Post</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	</head>
+	<body style="background:#333">
+<%
+	function formatTime(d) {
+		d = new Date(d);
+		if ( d.getTime() )
+			return ('0'+d.getDate()).slice(-2) + '/' + ('0'+(d.getMonth()+1)).slice(-2) + '/' + d.getFullYear() + ' ' + ('0'+d.getHours()).slice(-2) + ':' + ('0'+d.getMinutes()).slice(-2);
+		return "?"
+	}
+%>
+		<br>
+		<div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">On-Off-Post</div>
+				<div class="panel-body">
+					<h3>Intervals since <%= formatTime(begin) %></h3>
+					<br>
+					<table class="table table-bordered table-hover data">
+						<thead>
+							<tr>
+								<th>UUID</th>
+								<th>DEVICE</th>
+								<th>START AT</th>
+								<th>STOP AT</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for ( var row of rows ) { %>
+								<tr>
+									<td><%= row.uuid %></td>
+									<td><%= row.device %></td>
+									<td><%= formatTime(row.startAt) %></td>
+									<td><%= formatTime(row.stopAt) %></td>
+								</tr>
+							<% } %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</body>
+</html>
