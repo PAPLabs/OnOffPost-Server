@@ -59,3 +59,7 @@ if ( !actions[0].on ) {
     });
 }
 ```
+
+Sample server in action :
+
+![image](https://github.com/PAPLabs/OnOffPost-Server/blob/master/doc/server_preview.jpg?raw=true)
