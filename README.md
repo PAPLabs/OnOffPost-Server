@@ -2,6 +2,7 @@
 Application in action :
 
 ![image](https://github.com/PAPLabs/OnOffPost-Server/blob/master/doc/app_preview.png?raw=true)
+![image](https://github.com/PAPLabs/OnOffPost-Server/blob/master/doc/app_settings.png?raw=true)
 
 # Sample server implementation
 
