@@ -85,7 +85,7 @@ server.get('/', function(req, res) {
 
 	// Find stored intervals crossing the selected period
 	// Include unfinished intervals (stopAt=0)
-	db.query("SELECT * FROM OnOffPost WHERE startAt < ? AND (stopAt > ? OR stopAt=0)", [ end.getTime(), begin.getTime() ])
+	db.query("SELECT * FROM OnOffPost WHERE startAt < ? AND (stopAt > ? OR stopAt=0) ORDER BY startAt DESC", [ end.getTime(), begin.getTime() ])
 	.then(rows => res.render('view', { begin:begin, rows:rows }))
 	.catch(err => {
 		console.error(err);
