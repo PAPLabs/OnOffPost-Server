@@ -1,6 +1,7 @@
 # On-Off-Post
-Application in action
-[img]
+Application in action :
+
+![image](https://github.com/PAPLabs/OnOffPost-Server/blob/master/doc/app_preview.png?raw=true)
 
 # Sample server implementation
 
@@ -37,8 +38,10 @@ UPDATE OnOffPost SET stopAt = ? WHERE stopAt=0 AND startAt < ? AND uuid = ?
 #values: actions[0].ts, actions[0].ts, uuid
 ```
 
-One more thing to note is that on first launch, app always start with an "OFF" action.
-[img]
+One more thing to note is that on first launch, app always start with an "OFF" action :
+
+![image](https://github.com/PAPLabs/OnOffPost-Server/blob/master/doc/app_initial.png?raw=true)
+
 This serves two main purposes :
 - send a first initial request to server, so you can set up device identification
 - if user uninstalled the app while leaving it ON, the OFF action at reinstall will close the unfinished interval.
